@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chp-4</title>
+</head>
+<body>
+
+
+<h1>Rules for Naming JS Variables</h1>
+<div id="content"></div>
+
+<script>
+const contentDiv = document.getElementById('content');
+
+const messages = [
+    "Variable names can only contain <b>letters</b>, <b>numbers</b>, <b>underscores (_)</b>, and <b>dollar sign ($)</b>. For example, <b>myName</b>, <b>_age</b>, <b>user123</b>, <b>$amount</b>.",
+    "Variable names must begin with a <b>letter</b>, <b>underscore (_)</b>, or <b>dollar sign ($)</b>. For example, <b>name</b>, <b>_name</b>, <b>$amount</b>.",
+    "Variable names are <b>case sensitive</b>.",
+    "Variable names should not be JavaScript <b>reserved keywords</b> like <i>var</i>, <i>function</i>, <i>if</i>, etc."
+];
+
+function showMessage(index) {
+    if (index >= messages.length) return;
+    // Append the next message
+    contentDiv.innerHTML += "<p>" + messages[index] + "</p>";
+    // Show next message after 2 seconds
+    setTimeout(() => showMessage(index + 1), 2000);
+}
+
+// Start the sequence
+showMessage(0);
+</script>
+
+    <script src="./index.js"></script>
+</body>
+</html>
